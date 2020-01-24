@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let counter = 0
 
+
     button.addEventListener('click', function () {
         console.log(counter);
         let box = document.createElement('div');
@@ -25,5 +26,36 @@ document.addEventListener("DOMContentLoaded", function () {
         counter++;
 
         box.appendChild(idDisplay);
+
+        let colorArray = ['green', 'yellow', 'blue', 'red', 'orange', 'pink', 'brown', 'purple']
+        function generateRandomColor() {
+            return Math.floor((Math.random() * 8));
+        }
+
+        box.addEventListener('click', function () {
+            box.style.backgroundColor = colorArray[generateRandomColor()];
+        });
+
+        box.addEventListener('dblclick', function () {
+            if (box.id % 2 === 0) {
+                if (document.body.contains(box.nextSibling)) {
+                    box.nextSibling.remove()
+                } else {
+                    alert("aint no box")
+                }
+            } else {
+                if (document.body.contains(box.previousSibling)) {
+                    box.previousSibling.remove()
+                } else {
+                    alert("aint no box")
+                }
+            }
+        })
+
     });
+
+
+
+
+
 });

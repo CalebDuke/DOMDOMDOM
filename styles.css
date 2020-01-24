@@ -3,7 +3,26 @@
     border: thick solid black;
     height: 100px;
     width: 100px;
+    /* text-justify: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: coral;
+    font-size: 5.5em;
+    font-weight: 900;
+
 }
+
+.id-display {
+    display: none;
+    color: black;
+    
+}
+
+.square:hover .id-display {
+    display: block;
+}
+
 
 .container {
     display: flex;
